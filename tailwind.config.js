@@ -12,6 +12,10 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        "1xl": "1440px",
+      },
+
       colors: {
         color_primary: "#1b1b1b",
         color_secondary: "#8c8c8c",

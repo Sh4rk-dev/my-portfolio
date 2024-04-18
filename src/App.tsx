@@ -17,11 +17,25 @@ import { RecentWork } from "@/components/work";
 import { Button } from "@/components/ui/button";
 import { Studies } from "@/components/studiesComponents";
 import { CarouselItemContent } from "@/components/ui/carousel/carouselItem";
+import { useForm } from "react-hook-form";
+
+interface IFormProps {
+  name: string;
+  subject: string;
+  message: string;
+}
 
 export function App() {
   const [isActive, setIsActive] = useState<boolean>(false);
 
+  const { register, handleSubmit } = useForm<IFormProps>()
+
   const feedback = feedbacks;
+
+  function handleSubmitQuestion(data: IFormProps) {
+    console.log(data);
+    
+  }
 
   return (
     <main className="bg-zinc-950 flex flex-col">
@@ -43,11 +57,8 @@ export function App() {
       </div>
 
       <section className="px-10 pt-14 lg:px-20 lg:pt-0 h-screen lg:h-fit">
-
-        <div className="flex flex-col mt-10 lg:pb-32 lg:flex-row lg:justify-center lg:items-center lg:gap-40 ">
-
-          <div className="order-2 lg:w-[32rem] lg:order-1 lg:mt-32">
-
+        <div className="flex flex-col mt-10 lg:pb-32 lg:flex-row md:justify-center md:items-center lg:gap-40">
+          <div className="order-2 md:max-w-[24rem] lg:order-1 lg:mt-32">
             <h1 className=" text-4xl lg:text-5xl mt-10 mb-2 font-raleway font-extrabold text-white">
               Renan Rapace
             </h1>
@@ -63,8 +74,12 @@ export function App() {
             </Button>
           </div>
 
-          <div className="rounded-xl items-center justify-center overflow-hidden order-1 lg:order-2 lg:mt-32 lg:h-[25rem] ">
-            <img className="lg:h-full lg:w-full" src="/src/assets/avatar.jpg" alt="Avatar" />
+          <div className="rounded-xl items-center justify-center overflow-hidden order-1 lg:order-2 md:mt-32 md:h-[25rem] ">
+            <img
+              className="md:w-full"
+              src="/src/assets/avatar.jpg"
+              alt="Avatar"
+            />
           </div>
         </div>
 
@@ -73,7 +88,7 @@ export function App() {
         </div>
       </section>
 
-      <section className="px-10 flex flex-col bg-white pt-20 mt-32 lg:mt-0 items-center lg:px-80">
+      <section className="px-10 flex flex-col bg-white pt-20 mt-32 lg:mt-0 items-center lg:px-80 md:bg-gray-300-500 ">
         <div className="flex flex-col justify-center items-center">
           <h1 className="font-raleway mb-5 text-4xl font-extrabold">
             Case Studies
@@ -87,7 +102,7 @@ export function App() {
         </div>
 
         <div className="flex flex-col">
-          <Studies className="mt-16 lg:flex lg:flex-row lg:gap-10 lg:justify-center lg:items-center">
+          <Studies className="mt-16 lg:flex lg:flex-row lg:gap-10 lg:justify-center lg:items-center md:flex-col">
             <Studies.Image
               className="order-1 lg:order-2 lg:flex lg:max-w-[27.81rem] lg:max-h-[18.85rem]"
               imgURL="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -164,7 +179,7 @@ export function App() {
         </div>
       </section>
 
-      <section className="px-10 flex flex-col pt-20 bg-zinc-950 h-screen lg:px-80 lg:items-center">
+      <section className="px-10 flex flex-col pt-20 bg-zinc-950 h-screen lg:px-80 lg:items-center ">
         <div className="flex flex-col justify-center items-center">
           <h1 className="font-raleway text-white mb-3 text-4xl font-extrabold">
             Testimonials
@@ -176,8 +191,8 @@ export function App() {
           </span>
         </div>
 
-        <div className="lg:max-w-[58rem] lg:px-6 flex flex-col mt-6 justify-center items-center border-white/20">
-          <Carousel className="w-full ">
+        <div className="lg:max-w-[56rem] lg:px-6 flex flex-col mt-6 justify-center items-center border-white/20">
+          <Carousel className="w-full md:w-[565px] mt-10 md:mt-32">
             <CarouselContent>
               {feedback.map((feedback, id) => (
                 <CarouselItem className="basis-auto" key={id}>
@@ -191,15 +206,15 @@ export function App() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="z-40 bg-white" />
-            <CarouselNext className="z-40" />
+            <CarouselPrevious className="z-40 bg-white hidden md:flex" />
+            <CarouselNext className="z-40 hidden md:flex" />
           </Carousel>
         </div>
       </section>
 
-      <section className="px-10 flex flex-col bg-white items-center lg:px-80">
+      <section className="px-10 flex flex-col bg-white items-center lg:px-80  md:items-center">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="px-10 font-raleway mt-10 mb-5 text-4xl font-extrabold">
+          <h1 className="px-8 font-raleway mt-20 mb-5 text-4xl font-extrabold">
             Recent Work
           </h1>
 
@@ -210,7 +225,7 @@ export function App() {
           </span>
         </div>
 
-        <div className="flex flex-col justify-center lg:flex-row gap-9 mb-20">
+        <div className="flex flex-col 1xl:flex-row gap-16 mb-20 md:items-center lg:flex lg:flex-col">
           <RecentWork
             url="https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             title="Work name here"
@@ -236,17 +251,17 @@ export function App() {
         </div>
 
         <div className="flex justify-center items-start mb-20">
-          <Form className="">
-            <Form.Label title="Name" />
-            <Form.Input type="text" placeholder="Please enter your name" />
+          <Form onSubmit={handleSubmit(handleSubmitQuestion)} className="">
+            <Form.Label title="Name"/>
+            <Form.Input type="text" placeholder="Please enter your name" {...register('name')}/>
 
             <Form.Label title="Subject" />
-            <Form.Input type="text" placeholder="Please enter subject" />
+            <Form.Input type="text" placeholder="Please enter subject" {...register('subject')}/>
 
             <Form.Label title="Message" />
-            <Form.Textarea placeholder="Enter your message" />
+            <Form.Textarea placeholder="Enter your message" {...register('message')}/>
 
-            <Button className="mt-4 h-12 w-full gap-2 font-raleway text-white font-extrabold bg-color_third border border-lime-700 shadow-2xl shadow-lime-700 hover:shadow-lime-700 hover:animate-pulse duration-200">
+            <Button type="submit" className="mt-4 h-12 w-full gap-2 font-raleway text-white font-extrabold bg-color_third border border-lime-700 shadow-2xl shadow-lime-700 hover:shadow-lime-700 hover:animate-pulse duration-200">
               Submit
               <ChevronRight size={18} />
             </Button>
@@ -254,7 +269,7 @@ export function App() {
         </div>
       </section>
 
-      <footer className="w-full h-[70px] -mt-16 flex items-center justify-center bg-color_primary">
+      <footer className="w-full h-14 mt-20 md:h-[70px] md:-mt-16 flex items-center justify-center bg-color_primary">
         <h1 className="text-white">Renan Rapace</h1>
       </footer>
     </main>
