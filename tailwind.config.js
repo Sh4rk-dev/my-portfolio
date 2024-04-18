@@ -14,7 +14,7 @@ module.exports = {
     extend: {
       colors: {
         color_primary: "#1b1b1b",
-        color_secundary: "#8c8c8c",
+        color_secondary: "#8c8c8c",
         color_third: "#3f8e00",
         _orange: "#ffa217",
         _orangeBackGround: "#fff6e9",
@@ -78,5 +78,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animated")],
 };

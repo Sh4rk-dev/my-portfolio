@@ -1,38 +1,36 @@
+import { TextLink } from "./textLink";
+
 import { LinkedinIcon, GithubIcon, InstagramIcon } from "lucide-react";
 
 export function Header() {
   return (
-    <nav className="w-full h-[70px] gap-[70px] justify-center items-center flex-row flex bg-color_primary rounded-b-lg">
-      <a className="text-color_secundary font-medium cursor-pointer hover:text-white/90 ease-linear duration-300">
-        Home
-      </a>
-      <a className="text-color_secundary font-medium cursor-pointer hover:text-white/90 ease-linear duration-300">
-        Case Studies
-      </a>
-      <a className="text-color_secundary font-medium cursor-pointer hover:text-white/90 ease-linear duration-300">
-        Testimonials
-      </a>
-      <a className="text-color_secundary font-medium cursor-pointer hover:text-white/90 ease-linear duration-300">
-        Recent work
-      </a>
-      <a className="text-color_secundary font-medium cursor-pointer hover:text-white/90 ease-linear duration-300">
-        Get In Touch
-      </a>
+    // lg:w-full lg:h-[70px] lg:px-32 lg:gap-[70px] lg:justify-center lg:items-center
+    <header className="flex flex-col gap-3 pb-10 justify-center items-center mt-2 bg-color_primary lg:flex lg:flex-row lg:mt-0 lg:pt-10 lg:justify-around lg:items-center lg:max-w-[69.37rem] lg:w-full lg:h-[70px] lg:rounded-b-lg">
+      <>
+        <TextLink text="Home" href="" />
 
-      <div className=" flex gap-5">
+        <TextLink text="Case Studies" href="" />
+
+        <TextLink text="Testimonials" href="" />
+
+        <TextLink text="Recent work" href="" />
+
+        <TextLink text="Get In Touch" href="" />
+      </>
+      <div className="flex gap-5 -mb-5 pt-10 lg:mb-0 lg:pt-0 ">
         <LinkedinIcon
           className="text-white/30 hover:text-white/70 cursor-pointer ease-linear duration-300"
-          size={20}
+          size={24}
         />
         <GithubIcon
           className="text-white/30 hover:text-white/70 cursor-pointer ease-linear duration-300"
-          size={20}
+          size={24}
         />
         <InstagramIcon
           className="text-white/30 hover:text-white/70 cursor-pointer ease-linear duration-300"
-          size={20}
+          size={24}
         />
       </div>
-    </nav>
+    </header>
   );
 }

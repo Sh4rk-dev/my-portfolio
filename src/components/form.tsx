@@ -2,37 +2,76 @@ import { ComponentProps } from "react";
 
 import { clsx } from "clsx";
 
-interface FormProps extends ComponentProps<"div"> {
+interface FormProps extends ComponentProps<"form"> {
   children: React.ReactNode;
+  className?: string;
+}
+interface FormLabelProps extends ComponentProps<"label"> {
+  title: string;
+  className?: string;
 }
 
 interface FormInputProps extends ComponentProps<"input"> {
   type: string;
   placeholder: string;
-  className: string;
+  className?: string;
 }
 
-interface FormLabelProps extends ComponentProps<"label"> {
-  title: string;
+interface FormTextareaProps extends ComponentProps<"textarea"> {
+  placeholder?: string;
+  className?: string;
 }
 
-function Form({ children, ...rest }: FormProps) {
-  return <div {...rest}>{children}</div>;
+function Form({ children, className, ...rest }: FormProps) {
+  return (
+    <form className={clsx("flex justify-start flex-col", className)} {...rest}>
+      {children}
+    </form>
+  );
 }
 
-function Label({ title }: FormLabelProps) {
-  return <label>{title}</label>;
+function Label({ title, className }: FormLabelProps) {
+  return (
+    <label className={clsx("text-white font-bold font-mono", className)}>
+      {title}
+    </label>
+  );
 }
 
 function Input({ placeholder, type, className, ...rest }: FormInputProps) {
   return (
-    <div className={clsx("", { className })} {...rest}>
-      <input type={type} placeholder={placeholder} />
-    </div>
+    <input
+      className={clsx(
+        "h-10 w-[21.87rem] text-xs mt-1 p-3 mb-5 rounded-md text-color_primary font-plexMono focus-visible",
+
+        className
+      )}
+      type={type}
+      placeholder={placeholder}
+      {...rest}
+    />
+  );
+}
+
+function Textarea({ placeholder, className, ...rest }: FormTextareaProps) {
+  return (
+    <textarea
+      id="about"
+      name="about"
+      rows={3}
+      defaultValue={""}
+      className={clsx(
+        "h-32 mt-1 p-3 mb-5 rounded-md text-color_primary font-plexMono sm:text-sm sm:leading-6",
+        className
+      )}
+      placeholder={placeholder}
+      {...rest}
+    />
   );
 }
 
 Form.Input = Input;
 Form.Label = Label;
+Form.Textarea = Textarea;
 
 export { Form };
