@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { useForm } from "react-hook-form";
+
 import { ChevronRight, ChevronsDown, Menu } from "lucide-react";
 
 import {
@@ -17,7 +19,6 @@ import { RecentWork } from "@/components/work";
 import { Button } from "@/components/ui/button";
 import { Studies } from "@/components/studiesComponents";
 import { CarouselItemContent } from "@/components/ui/carousel/carouselItem";
-import { useForm } from "react-hook-form";
 
 interface IFormProps {
   name: string;
@@ -28,13 +29,12 @@ interface IFormProps {
 export function App() {
   const [isActive, setIsActive] = useState<boolean>(false);
 
-  const { register, handleSubmit } = useForm<IFormProps>()
+  const { register, handleSubmit } = useForm<IFormProps>();
 
   const feedback = feedbacks;
 
   function handleSubmitQuestion(data: IFormProps) {
     console.log(data);
-    
   }
 
   return (
@@ -88,7 +88,10 @@ export function App() {
         </div>
       </section>
 
-      <section className="px-10 flex flex-col bg-white pt-20 mt-32 lg:mt-0 items-center lg:px-80 md:bg-gray-300-500 ">
+      <section
+        id="01"
+        className="px-10 flex flex-col bg-white pt-20 mt-32 lg:mt-0 items-center lg:px-80 md:bg-gray-300-500 "
+      >
         <div className="flex flex-col justify-center items-center">
           <h1 className="font-raleway mb-5 text-4xl font-extrabold">
             Case Studies
@@ -179,7 +182,10 @@ export function App() {
         </div>
       </section>
 
-      <section className="px-10 flex flex-col pt-20 bg-zinc-950 h-screen lg:px-80 lg:items-center ">
+      <section
+        id="02"
+        className="px-10 flex flex-col pt-20 bg-zinc-950 h-screen lg:px-80 lg:items-center "
+      >
         <div className="flex flex-col justify-center items-center">
           <h1 className="font-raleway text-white mb-3 text-4xl font-extrabold">
             Testimonials
@@ -212,7 +218,10 @@ export function App() {
         </div>
       </section>
 
-      <section className="px-10 flex flex-col bg-white items-center lg:px-80  md:items-center">
+      <section
+        id="03"
+        className="px-10 flex flex-col bg-white items-center lg:px-80  md:items-center"
+      >
         <div className="flex flex-col justify-center items-center">
           <h1 className="px-8 font-raleway mt-20 mb-5 text-4xl font-extrabold">
             Recent Work
@@ -239,7 +248,7 @@ export function App() {
         </div>
       </section>
 
-      <section className="px-10 pt-20 bg-zinc-950 h-screen">
+      <section id="04" className="px-10 pt-20 bg-zinc-950 h-screen">
         <div className="px-10 flex flex-col justify-center items-center">
           <h1 className="font-raleway text-white mb-5 text-4xl font-extrabold">
             Get In Touch
@@ -252,16 +261,30 @@ export function App() {
 
         <div className="flex justify-center items-start mb-20">
           <Form onSubmit={handleSubmit(handleSubmitQuestion)} className="">
-            <Form.Label title="Name"/>
-            <Form.Input type="text" placeholder="Please enter your name" {...register('name')}/>
+            <Form.Label title="Name" />
+            <Form.Input
+              type="text"
+              placeholder="Please enter your name"
+              {...register("name")}
+            />
 
             <Form.Label title="Subject" />
-            <Form.Input type="text" placeholder="Please enter subject" {...register('subject')}/>
+            <Form.Input
+              type="text"
+              placeholder="Please enter subject"
+              {...register("subject")}
+            />
 
             <Form.Label title="Message" />
-            <Form.Textarea placeholder="Enter your message" {...register('message')}/>
+            <Form.Textarea
+              placeholder="Enter your message"
+              {...register("message")}
+            />
 
-            <Button type="submit" className="mt-4 h-12 w-full gap-2 font-raleway text-white font-extrabold bg-color_third border border-lime-700 shadow-2xl shadow-lime-700 hover:shadow-lime-700 hover:animate-pulse duration-200">
+            <Button
+              type="submit"
+              className="mt-4 h-12 w-full gap-2 font-raleway text-white font-extrabold bg-color_third border border-lime-700 shadow-2xl shadow-lime-700 hover:shadow-lime-700 hover:animate-pulse duration-200"
+            >
               Submit
               <ChevronRight size={18} />
             </Button>
