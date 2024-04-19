@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import { ComponentProps, forwardRef } from "react";
 
 import { clsx } from "clsx";
 
@@ -38,37 +38,43 @@ function Label({ title, className }: FormLabelProps) {
   );
 }
 
-function Input({ placeholder, type, className, ...rest }: FormInputProps) {
-  return (
-    <input
-      className={clsx(
-        "h-10 w-[21.87rem] text-xs mt-1 p-3 mb-5 rounded-md text-color_primary font-plexMono focus-visible",
+const Input = forwardRef<HTMLInputElement, FormInputProps>(
+  ({ className, placeholder, type, ...rest }, ref) => {
+    return (
+      <input
+        ref={ref}
+        className={clsx(
+          "h-10 w-[21.87rem] text-xs mt-1 p-3 mb-5 rounded-md text-color_primary font-plexMono focus-visible",
 
-        className
-      )}
-      type={type}
-      placeholder={placeholder}
-      {...rest}
-    />
-  );
-}
+          className
+        )}
+        type={type}
+        placeholder={placeholder}
+        {...rest}
+      />
+    );
+  }
+);
 
-function Textarea({ placeholder, className, ...rest }: FormTextareaProps) {
-  return (
-    <textarea
-      id="about"
-      name="about"
-      rows={3}
-      defaultValue={""}
-      className={clsx(
-        "h-32 mt-1 p-3 mb-5 rounded-md text-color_primary font-plexMono sm:text-sm sm:leading-6",
-        className
-      )}
-      placeholder={placeholder}
-      {...rest}
-    />
-  );
-}
+const Textarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
+  ({ className, placeholder, ...rest }, ref) => {
+    return (
+      <textarea
+        ref={ref}
+        id="about"
+        name="about"
+        rows={3}
+        defaultValue={""}
+        className={clsx(
+          "h-32 mt-1 p-3 mb-5 rounded-md text-color_primary font-plexMono sm:text-sm sm:leading-6",
+          className
+        )}
+        placeholder={placeholder}
+        {...rest}
+      />
+    );
+  }
+);
 
 Form.Input = Input;
 Form.Label = Label;
