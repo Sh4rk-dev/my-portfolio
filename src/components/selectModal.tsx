@@ -7,8 +7,14 @@ export function SelectModal() {
         <Button className="w-20 bg-lime-500 text-white">PDF</Button>
       </a>
 
-      <a target="_blank" href="https://read.cv/r.rapace">
-        <Button className=" w-20 border border-lime-500">Online</Button>
+      <a
+        aria-label="Indisponível"
+        target="_blank"
+        // href="https://read.cv/r.rapace"
+      >
+        <Button className="cursor-not-allowed w-20 border border-lime-500">
+          Online
+        </Button>
       </a>
     </div>
   );
