@@ -33,4 +33,92 @@ export const feedbacks: IFeedBack[] = [
     feedback:
       "Isso é apenas um teste para ver se funciona realmente o componente 'carousel'.",
   },
+  {
+    id: "5",
+    imgURL: "https://github.com/ro-fontes.png",
+    name: "Guilherme Rapace",
+    profession: "Full-Stack ReactJs/Native/NodeJS",
+    feedback:
+      "Isso é apenas um teste para ver se funciona realmente o componente 'carousel'.",
+  },
+  {
+    id: "6",
+    imgURL: "https://github.com/ro-fontes.png",
+    name: "Guilherme Rapace",
+    profession: "Full-Stack ReactJs/Native/NodeJS",
+    feedback:
+      "Isso é apenas um teste para ver se funciona realmente o componente 'carousel'.",
+  },
+  {
+    id: "7",
+    imgURL: "https://github.com/ro-fontes.png",
+    name: "Guilherme Rapace",
+    profession: "Full-Stack ReactJs/Native/NodeJS",
+    feedback:
+      "Isso é apenas um teste para ver se funciona realmente o componente 'carousel'.",
+  },
+  {
+    id: "8",
+    imgURL: "https://github.com/ro-fontes.png",
+    name: "Guilherme Rapace",
+    profession: "Full-Stack ReactJs/Native/NodeJS",
+    feedback:
+      "Isso é apenas um teste para ver se funciona realmente o componente 'carousel'.",
+  },
+  {
+    id: "9",
+    imgURL: "https://github.com/ro-fontes.png",
+    name: "Guilherme Rapace",
+    profession: "Full-Stack ReactJs/Native/NodeJS",
+    feedback:
+      "Isso é apenas um teste para ver se funciona realmente o componente 'carousel'.",
+  },
+  {
+    id: "10",
+    imgURL: "https://github.com/ro-fontes.png",
+    name: "Guilherme Rapace",
+    profession: "Full-Stack ReactJs/Native/NodeJS",
+    feedback:
+      "Isso é apenas um teste para ver se funciona realmente o componente 'carousel'.",
+  },
+  {
+    id: "11",
+    imgURL: "https://github.com/ro-fontes.png",
+    name: "Guilherme Rapace",
+    profession: "Full-Stack ReactJs/Native/NodeJS",
+    feedback:
+      "Isso é apenas um teste para ver se funciona realmente o componente 'carousel'.",
+  },
+  {
+    id: "12",
+    imgURL: "https://github.com/ro-fontes.png",
+    name: "Guilherme Rapace",
+    profession: "Full-Stack ReactJs/Native/NodeJS",
+    feedback:
+      "Isso é apenas um teste para ver se funciona realmente o componente 'carousel'.",
+  },
+  {
+    id: "13",
+    imgURL: "https://github.com/ro-fontes.png",
+    name: "Guilherme Rapace",
+    profession: "Full-Stack ReactJs/Native/NodeJS",
+    feedback:
+      "Isso é apenas um teste para ver se funciona realmente o componente 'carousel'.",
+  },
+  {
+    id: "14",
+    imgURL: "https://github.com/ro-fontes.png",
+    name: "Guilherme Rapace",
+    profession: "Full-Stack ReactJs/Native/NodeJS",
+    feedback:
+      "Isso é apenas um teste para ver se funciona realmente o componente 'carousel'.",
+  },
+  {
+    id: "15",
+    imgURL: "https://github.com/ro-fontes.png",
+    name: "Guilherme Rapace",
+    profession: "Full-Stack ReactJs/Native/NodeJS",
+    feedback:
+      "Isso é apenas um teste para ver se funciona realmente o componente 'carousel'.",
+  },
 ];

@@ -1,8 +1,10 @@
+import { z } from "zod";
 import { useState } from "react";
 
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-import { ChevronRight, ChevronsDown, Menu } from "lucide-react";
+import { ChevronRight, ChevronsDown, Menu, X } from "lucide-react";
 
 import {
   Carousel,
@@ -26,10 +28,25 @@ interface IFormProps {
   message: string;
 }
 
+const formSchema = z.object({
+  name: z.string().trim().min(1, "Campo obrigatório").max(32),
+  subject: z.string().trim().min(1, "Campo obrigatório"),
+  message: z.string().trim().min(1, "Campo obrigatório"),
+});
+
+export type FormValidation = z.infer<typeof formSchema>;
+
 export function App() {
   const [isActive, setIsActive] = useState<boolean>(false);
 
-  const { register, handleSubmit } = useForm<IFormProps>();
+  const { register, handleSubmit } = useForm<FormValidation>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      subject: "",
+      message: "",
+    },
+  });
 
   const feedback = feedbacks;
 
@@ -39,15 +56,20 @@ export function App() {
 
   return (
     <main className="bg-zinc-950 flex flex-col">
-      <div className="flex w-full justify-start z-50 items-center py-2 fixed bg-color_primary lg:hidden">
+      <div className="flex w-full justify-start z-50 items-center py-2 fixed bg-color_primary lg:hidden transition ">
         <Button onClick={() => setIsActive(!isActive)}>
-          <Menu color="#fff" size={32} />
+          {!isActive ? (
+            <Menu color="#fff" size={32} />
+          ) : (
+            <X color="#fff" size={32} />
+          )}
         </Button>
+
         <h1 className="font-raleway text-white text-lg">Menu</h1>
       </div>
 
       {isActive && (
-        <div className="w-full h-fit px-10 z-50 mt-14 fixed bg-color_primary lg:hidden animate-flip-down animate-once animate-duration-1000 animate-ease-in-out ">
+        <div className="w-full h-fit px-10 z-50 mt-14 fixed bg-color_primary lg:hidden animate-flip-down animate-once animate-duration-1000 ">
           <Header />
         </div>
       )}
@@ -121,10 +143,12 @@ export function App() {
               quaerat quos rem? Amet provident saepe temporibus quaerat!"
               />
 
-              <Button className="mt-5 w-full gap-2 font-raleway text-white font-extrabold bg-_orange">
-                View case study
-                <ChevronRight size={18} />
-              </Button>
+              <a href="https://www.google.com">
+                <Button className="mt-5 w-full gap-2 font-raleway text-white font-extrabold bg-_orange md:transition md:ease-in-out md:hover:-translate-y-1 md:hover:scale-110 md:duration-500 ">
+                  View case study
+                  <ChevronRight size={18} />
+                </Button>
+              </a>
             </Studies>
           </Studies>
 
@@ -147,10 +171,12 @@ export function App() {
               quaerat quos rem? Amet provident saepe temporibus quaerat!"
               />
 
-              <Button className="mt-5 w-full gap-2 font-raleway text-white font-extrabold bg-blue-600">
-                View case study
-                <ChevronRight size={18} />
-              </Button>
+              <a href="https://www.google.com">
+                <Button className="mt-5 w-full gap-2 font-raleway text-white font-extrabold bg-blue-600 md:transition md:ease-in-out md:hover:-translate-y-1 md:hover:scale-110 md:duration-500">
+                  View case study
+                  <ChevronRight size={18} />
+                </Button>
+              </a>
             </Studies>
           </Studies>
 
@@ -173,10 +199,12 @@ export function App() {
               quaerat quos rem? Amet provident saepe temporibus quaerat!"
               />
 
-              <Button className="mt-5 w-full gap-2 font-raleway text-white font-extrabold bg-emerald-500 ">
-                View case study
-                <ChevronRight size={18} />
-              </Button>
+              <a href="https://www.google.com">
+                <Button className="mt-5 w-full gap-2 font-raleway text-white font-extrabold bg-emerald-500 md:transition md:ease-in-out md:hover:-translate-y-1 md:hover:scale-110 md:duration-400">
+                  View case study
+                  <ChevronRight size={18} />
+                </Button>
+              </a>
             </Studies>
           </Studies>
         </div>
@@ -198,7 +226,7 @@ export function App() {
         </div>
 
         <div className="lg:max-w-[56rem] lg:px-6 flex flex-col mt-6 justify-center items-center border-white/20">
-          <Carousel className="w-full md:w-[565px] mt-10 md:mt-32">
+          <Carousel className="w-full sm:w-[270px] md:w-[565px] lg:w-full mt-10 md:mt-32">
             <CarouselContent>
               {feedback.map((feedback, id) => (
                 <CarouselItem className="basis-auto" key={id}>
@@ -212,8 +240,8 @@ export function App() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="z-40 bg-white hidden md:flex" />
-            <CarouselNext className="z-40 hidden md:flex" />
+            <CarouselPrevious className="z-10 bg-white hidden md:flex sm:flex" />
+            <CarouselNext className="z-10 hidden md:flex sm:flex" />
           </Carousel>
         </div>
       </section>

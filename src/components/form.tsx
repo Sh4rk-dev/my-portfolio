@@ -1,6 +1,6 @@
-import { ComponentProps, forwardRef } from "react";
-
 import { clsx } from "clsx";
+
+import { ComponentProps, forwardRef } from "react";
 
 interface FormProps extends ComponentProps<"form"> {
   children: React.ReactNode;
@@ -21,6 +21,7 @@ interface FormTextareaProps extends ComponentProps<"textarea"> {
   placeholder?: string;
   className?: string;
 }
+
 
 function Form({ children, className, ...rest }: FormProps) {
   return (
