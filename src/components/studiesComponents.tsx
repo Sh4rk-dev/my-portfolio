@@ -36,7 +36,7 @@ function Tag({ tagName, className, ...rest }: StudiesTagProps) {
   return (
     <p
       className={clsx(
-        "w-fit py-1 px-3 mt-5 mb-2 font-plexMono text-xs font-extrabold bg-_orangeBackGround rounded-full",
+        "w-fit py-1 px-3 mb-2 mt-3 lg:mt-0 font-plexMono text-xs font-extrabold bg-_orangeBackGround rounded-full",
         className
       )}
       {...rest}

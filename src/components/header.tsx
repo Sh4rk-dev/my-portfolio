@@ -10,19 +10,51 @@ import {
 
 import { SelectModal } from "./selectModal";
 
-export function Header() {
+interface IHeaderProps {
+  setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export function Header({ setIsOpen }: IHeaderProps) {
   const { openModal } = useModal();
+
+  function handleCloseModalOnClick() {
+    if (setIsOpen) {
+      setIsOpen(false);
+    }
+  }
 
   return (
     <header className="flex flex-col gap-3 pb-10 justify-center items-center mt-2 bg-color_primary lg:flex lg:flex-row lg:mt-0 lg:pt-10 lg:justify-around lg:items-center lg:max-w-[69.37rem] lg:w-full lg:h-[70px] lg:rounded-b-lg">
       <>
-        <TextLink text="Case Studies" href="#01" />
+        <TextLink
+          onClick={handleCloseModalOnClick}
+          text="Home"
+          href="#01"
+        />
 
-        <TextLink text="Testimonials" href="#02" />
+        <TextLink
+          onClick={handleCloseModalOnClick}
+          text="Case Studies"
+          href="#02"
+        />
 
-        <TextLink text="Recent work" href="#03" />
+        <TextLink
+          onClick={handleCloseModalOnClick}
+          text="Testimonials"
+          href="#03"
+        />
 
-        <TextLink text="Get In Touch" href="#04" />
+        <TextLink
+          onClick={handleCloseModalOnClick}
+          text="Recent work"
+          href="#04"
+        />
+
+        <TextLink
+          onClick={handleCloseModalOnClick}
+          text="Get In Touch"
+          href="#05"
+        />
       </>
 
       <div className="flex gap-5 -mb-5 pt-10 lg:mb-0 lg:pt-0 ">
