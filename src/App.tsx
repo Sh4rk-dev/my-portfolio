@@ -23,7 +23,7 @@ import { RecentWork } from "@/components/work";
 import { Button } from "@/components/ui/button";
 import { Studies } from "@/components/studiesComponents";
 import { CarouselItemContent } from "@/components/ui/carousel/carouselItem";
-import { studys } from "./moked/ESTUDOS";
+import { contentTheStudies } from "./moked/ESTUDOS";
 
 interface IFormProps {
   name: string;
@@ -52,7 +52,7 @@ export function App() {
   });
 
   const feedback = feedbacks;
-  const study = studys;
+  const content = contentTheStudies;
 
   const variants = {
     open: { opacity: 1, x: 0 },
@@ -168,11 +168,11 @@ export function App() {
           </div>
 
           <div className="flex flex-col">
-            {study.map((study, id) => (
+            {content.map((content, id) => (
               <motion.div
                 key={id}
                 initial={
-                  study.id / 2 !== 1
+                  content.id / 2 !== 1
                     ? { opacity: 0, x: -100 }
                     : { opacity: 0, x: 100 }
                 }
@@ -182,23 +182,23 @@ export function App() {
               >
                 <Studies className="my-16 lg:flex lg:flex-row lg:gap-10 lg:justify-center lg:items-center md:flex-col">
                   <Studies.Image
-                    className={`${study.orientation} lg:flex lg:max-w-[27.81rem] lg:h-[20.85rem]`}
-                    imgURL={study.image}
+                    className={`${content.orientation} lg:flex lg:max-w-[27.81rem] lg:h-[20.85rem]`}
+                    imgURL={content.image}
                   />
 
                   <Studies className="lg:max-w-[28.12rem] flex flex-col justify-between lg:h-80">
                     <Studies>
                       <Studies.Tag
-                        tagName={study.tag}
-                        className={study.colorText}
+                        tagName={content.tag}
+                        className={content.colorText}
                       />
-                      <Studies.Title title={study.title} />
-                      <Studies.Description description={study.description} />
+                      <Studies.Title title={content.title} />
+                      <Studies.Description description={content.description} />
                     </Studies>
 
-                    <a href={study.buttonLink}>
+                    <a href={content.buttonLink}>
                       <Button
-                        className={`mt-5 w-fit gap-2 font-raleway text-white font-extrabold ${study.color} md:transition md:ease-in-out md:hover:-translate-y-1 md:hover:scale-110 md:duration-500`}
+                        className={`mt-5 w-fit gap-2 font-raleway text-white font-extrabold ${content.color} md:transition md:ease-in-out md:hover:-translate-y-1 md:hover:scale-110 md:duration-500`}
                       >
                         Acessar o repositótio
                         <ChevronRight size={18} />

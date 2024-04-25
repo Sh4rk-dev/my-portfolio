@@ -6,7 +6,7 @@ export interface IFeedBack {
   profession: string;
 }
 
-export interface IStudys {
+export interface IStudies {
   id: number;
   tag: string;
   color: string;

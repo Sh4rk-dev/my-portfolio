@@ -1,4 +1,4 @@
-import { IStudys } from "@/lib/interface";
+import { IStudies } from "@/lib/interface";
 
 const orientation = {
   left: "order-0 lg:-order-1",
@@ -17,7 +17,7 @@ const variantsTexts = {
   textOrange: "bg-_orangeBackGround text-_orange",
 };
 
-export const studys: IStudys[] = [
+export const contentTheStudies : IStudies[] = [
   {
     id: 1,
     tag: "Mobile",
