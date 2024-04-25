@@ -34,25 +34,25 @@ export function Header({ setIsOpen }: IHeaderProps) {
 
         <TextLink
           onClick={handleCloseModalOnClick}
-          text="Case Studies"
+          text="Estudos"
           href="#02"
         />
 
         <TextLink
           onClick={handleCloseModalOnClick}
-          text="Testimonials"
+          text="Testemunhas"
           href="#03"
         />
 
         <TextLink
           onClick={handleCloseModalOnClick}
-          text="Recent work"
+          text="Trabalhos Recentes"
           href="#04"
         />
 
         <TextLink
           onClick={handleCloseModalOnClick}
-          text="Get In Touch"
+          text="Entre em contato"
           href="#05"
         />
       </>
