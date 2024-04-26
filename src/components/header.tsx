@@ -1,6 +1,7 @@
 import { useModal } from "@/context/useModal";
 import { TextLink } from "./textLink";
 
+
 import {
   LinkedinIcon,
   GithubIcon,
@@ -26,17 +27,9 @@ export function Header({ setIsOpen }: IHeaderProps) {
   return (
     <header className="flex flex-col gap-3 pb-10 justify-center items-center mt-2 bg-color_primary lg:flex lg:flex-row lg:mt-0 lg:pt-10 lg:justify-around lg:items-center lg:max-w-[69.37rem] lg:w-full lg:h-[70px] lg:rounded-b-lg">
       <>
-        <TextLink
-          onClick={handleCloseModalOnClick}
-          text="Home"
-          href="#01"
-        />
+        <TextLink onClick={handleCloseModalOnClick} text="Home" href="#01" />
 
-        <TextLink
-          onClick={handleCloseModalOnClick}
-          text="Estudos"
-          href="#02"
-        />
+        <TextLink onClick={handleCloseModalOnClick} text="Estudos" href="#02" />
 
         <TextLink
           onClick={handleCloseModalOnClick}
@@ -73,12 +66,12 @@ export function Header({ setIsOpen }: IHeaderProps) {
           />
         </a>
 
-        <a href="https://www.instagram.com/r.rapace_04/">
-          <InstagramIcon
-            className="text-white/30 hover:text-white/70 cursor-pointer ease-linear duration-300"
-            size={24}
-          />
-        </a>
+          <a href="https://www.instagram.com/r.rapace_04/">
+            <InstagramIcon
+              className="text-white/30 hover:text-white/70 cursor-pointer ease-linear duration-300"
+              size={24}
+            />
+          </a>
 
         <DownloadIcon
           onClick={() =>

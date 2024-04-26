@@ -67,7 +67,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
         rows={3}
         defaultValue={""}
         className={clsx(
-          "h-32 mt-1 p-3 mb-5 rounded-md text-color_primary font-plexMono sm:text-sm sm:leading-6",
+          "md:max-h-60 h-44 mt-1 p-3 mb-5 rounded-md text-color_primary font-plexMono sm:text-sm sm:leading-6",
           className
         )}
         placeholder={placeholder}

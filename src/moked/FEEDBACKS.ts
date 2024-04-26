@@ -7,6 +7,6 @@ export const feedbacks: IFeedBack[] = [
     imgURL: "https://github.com/ro-fontes.png",
     profession: "Full-Stack ReactJs/Native/NodeJS",
     feedback:
-      "Isso é apenas um teste para ver se funciona realmente o componente 'carousel'.",
+      "Renan é um programador excepcional, sempre querendo aprender mais e mais, além de dedicado. Indispensável para o sucesso do seu projeto.",
   },
 ];

@@ -12,7 +12,7 @@ export function SelectModal() {
         target="_blank"
         // href="https://read.cv/r.rapace"
       >
-        <Button className="cursor-not-allowed w-20 border border-lime-500">
+        <Button className="cursor-not-allowed w-20 border border-lime-500/40 text-black/40">
           Online
         </Button>
       </a>

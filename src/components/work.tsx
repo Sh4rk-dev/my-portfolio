@@ -19,7 +19,7 @@ export function RecentWork({ url, title, description }: IRecentWorkProps) {
         <h1 className="text-2xl text-black mt-10 font-raleway font-extrabold">
           {title}
         </h1>
-        <span className="text-base text-color_secondary mt-5 font-mono leading-6">
+        <span className="w-full text-pretty text-base text-color_secondary mt-5 font-mono leading-6">
           {description}
         </span>
       </div>

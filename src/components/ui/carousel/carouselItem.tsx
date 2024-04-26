@@ -16,12 +16,12 @@ export function CarouselItemContent({
   avatar,
 }: ICarouselProps) {
   return (
-    <div className=" flex flex-col w-[270px] h-96 rounded-lg border border-white/20 p-5">
+    <div className=" flex flex-col w-[270px] h-full rounded-lg border border-white/20 p-5">
       <div className="flex flex-col items-center">
         {avatar ? (
           <Avatar className="w-32 h-32 mt-4 mb-4">
             <AvatarImage src={imgURL} />
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarFallback>FT</AvatarFallback>
           </Avatar>
         ) : (
           <img src={imgURL} alt="imagem de perfil" />

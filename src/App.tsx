@@ -6,7 +6,14 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { ChevronRight, ChevronsDown, Mail, Menu, X } from "lucide-react";
+import {
+  ChevronRight,
+  ChevronsDown,
+  Mail,
+  MapPin,
+  Menu,
+  X,
+} from "lucide-react";
 
 import {
   Carousel,
@@ -135,7 +142,7 @@ export function App() {
             </div>
           </div>
 
-          <div className="flex justify-center animate-bounce duration-800 mt-14 lg:mb-28">
+          <div className="flex justify-center animate-bounce duration-800 mt-14 pb-10 lg:mb-28">
             <ChevronsDown size={40} color="#fff" />
           </div>
         </motion.div>
@@ -182,7 +189,7 @@ export function App() {
               >
                 <Studies className="my-16 lg:flex lg:flex-row lg:gap-10 lg:justify-center lg:items-center md:flex-col">
                   <Studies.Image
-                    className={`${content.orientation} lg:flex lg:max-w-[27.81rem] lg:h-[20.85rem]`}
+                    className={`${content.orientation} lg:flex lg:max-w-[29.81rem]`}
                     imgURL={content.image}
                   />
 
@@ -214,7 +221,7 @@ export function App() {
 
       <section
         id="03"
-        className="px-10 flex flex-col pt-20 bg-zinc-950 h-screen lg:px-80 lg:items-center "
+        className="px-10 flex flex-col pt-10 bg-zinc-950 h-[800px] lg:px-80 lg:items-center "
       >
         <motion.div
           initial={{ opacity: 0, x: 100 }}
@@ -227,13 +234,13 @@ export function App() {
               Feedbacks
             </h1>
             <span className="flex lg:max-w-[35.62rem] text-center text-sm leading-7 text-color_secondary font-plexMono">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-              ipsa, explicabo eum aut, fugit laudantium ipsam veritatis culpa
-              veniam blanditiis.
+              Nesta seção, você verá os pensamentos compartilhados por outras
+              pessoas sobre a experiências do meu trabalho, minhas habilidades
+              ou meu desempenho.
             </span>
           </div>
 
-          <div className="lg:max-w-[56rem] lg:px-6 flex flex-col mt-6 justify-center items-center border-white/20">
+          <div className="lg:max-w-[56rem] lg:px-6 flex flex-col  justify-center items-center border-white/20">
             <Carousel className="w-full justify-center flex mt-10">
               <CarouselContent>
                 {feedback.map((feedback, id) => (
@@ -282,12 +289,12 @@ export function App() {
             <RecentWork
               url="/src/assets/ScreenApp.png"
               title="TTF Alimentos"
-              description="Rempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt u"
+              description="Aplicativo para Ecommerce no ramo de panificação. Frameworks:  React Native, Expo GO e TailwindCSS. "
             />
             <RecentWork
               url="/src/assets/MyPortfolioWeb.png"
               title="Meu Portfolio"
-              description="Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna."
+              description="Esse foi o meu primeiro projeto pessoal. Framework: ReactJS, TailwindCSS e Radix-ui"
             />
           </div>
         </motion.div>
@@ -304,7 +311,7 @@ export function App() {
           transition={{ delay: 0.5, duration: 0.5, ease: "easeInOut" }}
         >
           <div className="px-10 flex flex-col justify-center items-center">
-            <h1 className="font-raleway text-white mb-5  text-3xl md:text-4xl font-extrabold">
+            <h1 className="font-raleway text-white mb-5 mt-20 md:mt-0  text-3xl md:text-4xl font-extrabold">
               Entre em Contato
             </h1>
             <span className="flex mb-[60px] text-center text-sm leading-7 text-color_secondary font-plexMono">
@@ -347,8 +354,13 @@ export function App() {
         </motion.div>
       </section>
 
-      <footer className="w-full h-14 mt-20 md:h-[70px] md:-mt-16 flex items-center justify-center bg-color_primary">
-        <h1 className="text-white">Renan Rapace</h1>
+      <footer className="w-full h-24 mt-40 flex flex-col items-center justify-center md:h-[70px] md:-mt-16 md:flex-row md:pt-0 md:justify-between md:px-20 bg-color_primary">
+        <h1 className="text-white">Copyright © Renan Rapace · 2024</h1>
+
+        <div className="flex flex-row gap-2 pt-px">
+          <MapPin color="#fff" />
+          <h1 className="text-white">São Paulo, SP - Brasil</h1>
+        </div>
       </footer>
     </main>
   );
