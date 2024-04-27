@@ -8,7 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import fotoAvatar from "./assets/avatar.jpg";
 import portfolioweb from "./assets/myportfolioweb.png"; 
-import ScreenApp from "./assets/screenapp-reactnative.png";
+import ScreenApp from "./assets/screenapp.png";
 
 import {
   ChevronRight,
