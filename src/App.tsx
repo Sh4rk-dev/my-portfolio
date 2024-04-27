@@ -136,7 +136,7 @@ export function App() {
             <div className="md:rounded-full rounded-xl items-center justify-center overflow-hidden order-1 lg:order-2 md:mt-32 md:h-[25rem] ">
               <img
                 className="w-full"
-                src="/assets/avatar.jpg"
+                src="/src/assets/avatar.jpg"
                 alt="Avatar"
               />
             </div>
