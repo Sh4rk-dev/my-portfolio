@@ -1,5 +1,9 @@
 import { IStudies } from "@/lib/interface";
 
+import backendImg from "../assets/backend.png";
+import reactjsImg from "../assets/screenweb-reactjs.png";
+import reactNativeImg from "../assets/screenapp-reactnative.png";
+
 const orientation = {
   left: "order-0 lg:-order-1",
   right: "order-1 lg:order-2",
@@ -17,7 +21,7 @@ const variantsTexts = {
   textOrange: "bg-_orangeBackGround text-_orange",
 };
 
-export const contentTheStudies : IStudies[] = [
+export const contentTheStudies: IStudies[] = [
   {
     id: 1,
     tag: "Mobile",
@@ -28,8 +32,7 @@ export const contentTheStudies : IStudies[] = [
     buttonLink: "https://github.com/Sh4rk-dev/NLW-Unite-Mobile",
     description:
       "Desenvolvimento de uma aplicação mobile em React Native, aplicação dos conceitos de Propriedades, Estados e Componentes, tipagem com Typescript, Expo Framework, interface com Native Wind, gerenciamento de estado global com Zustand, roteamento por arquivos com Expo Router, consumo de API Node.js, animações com Moti.",
-    image:
-      "/public/screenapp-(reactnative).png",
+    image: reactNativeImg,
   },
   {
     id: 2,
@@ -41,8 +44,7 @@ export const contentTheStudies : IStudies[] = [
     buttonLink: "https://github.com/Sh4rk-dev/NLW-Unite-React",
     description:
       "Desenvolvimento de uma aplicação front-end em ReactJS, aplicação dos conceitos de Propriedades, Estados e Componentes, tipagem com Typescript, tooling com Vite, interface responsiva com TailwindCSS, consumo de API Node.js, uso de URL states.",
-    image:
-      "/public/screenweb-(reactjs).png",
+    image: reactjsImg,
   },
   {
     id: 3,
@@ -54,7 +56,6 @@ export const contentTheStudies : IStudies[] = [
     buttonLink: "https://github.com/Sh4rk-dev/NLW-Unite-NodeJS",
     description:
       "Desenvolvimento de uma aplicação back-end em Node.js, aplicação dos conceitos de API REST, utilizando TypeScript, Fastify como framework, integração do Prisma ORM + SQLite e Zod para validação de dados.",
-    image:
-      "/public/backend.png",
+    image: backendImg,
   },
 ];

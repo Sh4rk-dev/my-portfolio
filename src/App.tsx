@@ -6,6 +6,10 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+import fotoAvatar from "./assets/avatar.jpg";
+import portfolioweb from "/src/assets/MyPortfolioWeb.png";
+import ScreenApp from "./assets/screenapp-reactnative.png";
+
 import {
   ChevronRight,
   ChevronsDown,
@@ -17,9 +21,9 @@ import {
 
 import {
   Carousel,
-  CarouselContent,
   CarouselItem,
   CarouselNext,
+  CarouselContent,
   CarouselPrevious,
 } from "@/components/ui/carousel/carousel";
 
@@ -134,11 +138,7 @@ export function App() {
             </div>
 
             <div className="md:rounded-full rounded-xl items-center justify-center overflow-hidden order-1 lg:order-2 md:mt-32 md:h-[25rem] ">
-              <img
-                className="w-full"
-                src="/public/avatar.jpg"
-                alt="Avatar"
-              />
+              <img className="w-full" src={fotoAvatar} alt="Avatar" />
             </div>
           </div>
 
@@ -287,12 +287,12 @@ export function App() {
 
           <div className="flex flex-col 1xl:flex-row gap-16 mb-20 md:items-center lg:flex lg:flex-col">
             <RecentWork
-              url="/src/assets/ScreenApp.png"
+              url={ScreenApp}
               title="TTF Alimentos"
               description="Aplicativo para Ecommerce no ramo de panificação. Frameworks:  React Native, Expo GO e TailwindCSS. "
             />
             <RecentWork
-              url="/src/assets/MyPortfolioWeb.png"
+              url={portfolioweb}
               title="Meu Portfolio"
               description="Esse foi o meu primeiro projeto pessoal. Framework: ReactJS, TailwindCSS e Radix-ui"
             />
