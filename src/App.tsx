@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import fotoAvatar from "./assets/avatar.jpg";
-import portfolioweb from "/src/assets/MyPortfolioWeb.png";
+import portfolioweb from "./assets/myportfolioweb.png"; 
 import ScreenApp from "./assets/screenapp-reactnative.png";
 
 import {
