@@ -29,7 +29,7 @@ export const contentTheStudies : IStudies[] = [
     description:
       "Desenvolvimento de uma aplicação mobile em React Native, aplicação dos conceitos de Propriedades, Estados e Componentes, tipagem com Typescript, Expo Framework, interface com Native Wind, gerenciamento de estado global com Zustand, roteamento por arquivos com Expo Router, consumo de API Node.js, animações com Moti.",
     image:
-      "/src/assets/ScreenApp-(ReactNative).png",
+      "/src/assets/screenapp-(reactnative).png",
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ export const contentTheStudies : IStudies[] = [
     description:
       "Desenvolvimento de uma aplicação front-end em ReactJS, aplicação dos conceitos de Propriedades, Estados e Componentes, tipagem com Typescript, tooling com Vite, interface responsiva com TailwindCSS, consumo de API Node.js, uso de URL states.",
     image:
-      "/src/assets/ScreenWeb-(ReactJS).png",
+      "/src/assets/screenweb-(reactjs).png",
   },
   {
     id: 3,
@@ -55,6 +55,6 @@ export const contentTheStudies : IStudies[] = [
     description:
       "Desenvolvimento de uma aplicação back-end em Node.js, aplicação dos conceitos de API REST, utilizando TypeScript, Fastify como framework, integração do Prisma ORM + SQLite e Zod para validação de dados.",
     image:
-      "/src/assets/Backend.png",
+      "/src/assets/backend.png",
   },
 ];
