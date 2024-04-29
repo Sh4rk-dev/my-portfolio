@@ -287,11 +287,13 @@ export function App() {
 
           <div className="flex flex-col 1xl:flex-row gap-16 mb-20 md:items-center lg:flex lg:flex-col">
             <RecentWork
+            linkButton="https://ttfalimentos.com.br/"
               url={ScreenApp}
               title="TTF Alimentos"
               description="Aplicativo para Ecommerce no ramo de panificação. Frameworks:  React Native, Expo GO e TailwindCSS. "
             />
             <RecentWork
+              linkButton="https://github.com/Sh4rk-dev/my-portfolio"
               url={portfolioweb}
               title="Meu Portfolio"
               description="Esse foi o meu primeiro projeto pessoal. Framework: ReactJS, TailwindCSS e Radix-ui"

@@ -6,9 +6,15 @@ interface IRecentWorkProps {
   url: string;
   title: string;
   description: string;
+  linkButton: string;
 }
 
-export function RecentWork({ url, title, description }: IRecentWorkProps) {
+export function RecentWork({
+  url,
+  title,
+  description,
+  linkButton,
+}: IRecentWorkProps) {
   return (
     <div className="flex flex-col">
       <div className="flex md:max-w-[445px] md:h-80 overflow-hidden">
@@ -24,10 +30,12 @@ export function RecentWork({ url, title, description }: IRecentWorkProps) {
         </span>
       </div>
 
-      <Button className="mt-7 w-[10.75rem] gap-2 font-raleway text-white font-extrabold bg-color_third border border-lime-500 shadow-2xl shadow-lime-500 hover:bg-color_third/80">
-        View case study
-        <ChevronRight color="#fff" size={18} />
-      </Button>
+      <a href={linkButton}>
+        <Button className="mt-7 w-[10.75rem] gap-2 font-raleway text-white font-extrabold bg-color_third border border-lime-500 shadow-2xl shadow-lime-500 hover:bg-color_third/80">
+          View case study
+          <ChevronRight color="#fff" size={18} />
+        </Button>
+      </a>
     </div>
   );
 }
