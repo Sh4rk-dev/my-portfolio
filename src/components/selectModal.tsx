@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 export function SelectModal() {
   return (
     <div className="flex justify-center md:justify-end gap-5">
-      <a href="https://drive.google.com/file/d/13X0WyldDrq6iolKiXVPdfozjV9ZaUwdr/view?usp=sharing">
+      <a href="https://drive.google.com/file/d/1-gOPTpVyzLmHbyGxZ-OPTz8wJ1TxC1rM/view?usp=sharing" target="_blank">
         <Button className="w-20 bg-lime-500 text-white">PDF</Button>
       </a>
 
